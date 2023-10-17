@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Release Date</th>
+      <!-- Add more table headers for other movie details -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of movies">
+      <td>
+        <a [rounterLink]="'/movie' + movie.id">
+          <img src="https://image.tmdb.org/t/p/w220_and_h330_face{{ movie.poster_path }}" />
+        </a>
+      </td>
+      <td>{{ movie.title }}</td>
+      <td>{{ movie.overview }}</td>
+      <td>{{ movie.release_date }}</td>
+      <!-- Display other movie details in corresponding table cells -->
+    </tr>
+  </tbody>
+</table>
